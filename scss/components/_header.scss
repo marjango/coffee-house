@@ -1,0 +1,28 @@
+.header {
+  margin-bottom: 2rem;
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  @media (min-width: $tablet-width) {
+    &__menu-link {
+      display: flex;
+    }
+
+    &__menu-button {
+      display: none;
+    }
+  }
+  @media (max-width: $tablet-width) {
+    &__menu-link {
+      display: none;
+    }
+
+    &__menu-button {
+      display: flex;
+    }
+  }
+}

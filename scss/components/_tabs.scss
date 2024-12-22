@@ -1,0 +1,16 @@
+.tabs {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    align-items: center;
+    width: 100%;
+
+  &__switchers {
+    display: flex;
+    gap: 1.45rem;
+
+    @media (max-width: $custom-small-width) {
+      gap: 0.8rem;
+    }
+  }
+}

@@ -1,0 +1,261 @@
+%button {
+  background-color: $clr-bg-body;
+  border-radius: 10rem;
+  border: none;
+  font-weight: 600;
+  line-height: 1.5;
+  width: 20rem;
+  font-size: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+  transition: $transition;
+  font-family: inherit;
+
+  & * {
+    transition: $transition;
+  }
+}
+
+%button-transparent {
+  @extend %button;
+
+  background-color: transparent;
+  border: 0.1rem solid $clr-border-dark;
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      cursor: pointer;
+      background-color: $clr-bg-container;
+    }
+  }
+}
+
+.tab-button {
+  @extend %button-transparent;
+
+  padding: 0.8rem 1.6rem 0.8rem 0.8rem;
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 0.8rem;
+  width: fit-content;
+  height: 4.6rem;
+
+  &__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
+    padding: 0.3rem 0.7rem;
+    background-color: $clr-border-light;
+    border-radius: 10rem;
+  }
+
+  &__text {
+    color: $clr-text-dark;
+  }
+
+  &:not(&_active) {
+    border-color: $clr-border-light;
+  }
+
+  &_active:hover {
+    cursor: default;
+  }
+
+  &_active {
+    border-color: $clr-bg-container;
+    background-color: $clr-bg-container;
+
+    .tab-button__text {
+      color: $clr-text-light;
+    }
+
+    .tab-button__icon {
+      background-color: $clr-bg-body;
+    }
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      border-color: $clr-bg-container;
+      background-color: $clr-bg-container;
+
+      .tab-button__text {
+        color: $clr-text-light;
+      }
+
+      .tab-button__icon {
+        background-color: $clr-bg-body;
+      }
+    }
+  }
+}
+
+.modal-button {
+  @extend .tab-button;
+
+  &_wide {
+    width: 100%;
+    padding: 1rem 7.8rem;
+  }
+
+  &__icon {
+    @extend .tab-button__icon;
+  }
+
+  &__text {
+    @extend .tab-button__text;
+  }
+
+  &_active,
+  input:checked + & {
+    @extend .tab-button_active;
+  }
+
+  input[type="checkbox"]:checked + & {
+    cursor: pointer;
+  }
+}
+
+.button-primary {
+  @extend %button;
+
+  padding: 2rem 7.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+
+  & svg {
+    opacity: 0;
+    width: 0;
+    display: block;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      gap: 0.8rem;
+      & svg {
+        opacity: 1;
+        width: 20px;
+      }
+    }
+  }
+  @media (hover: none) and (pointer: coarse) {
+    gap: 0.8rem;
+    & svg {
+      opacity: 1;
+      width: 20px;
+    }
+  }
+}
+
+.button-app-store {
+  @extend %button-transparent;
+
+  padding: 1.2rem 2rem;
+  justify-content: flex-start;
+  height: 6.4rem;
+
+  & > .btn-text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2rem;
+  }
+  @media (hover: hover) and (pointer: fine) {
+    &:hover span {
+      color: $clr-text-light;
+    }
+
+    &:hover path {
+      fill: $clr-text-light;
+    }
+  }
+}
+
+.button-icon {
+  @extend %button-transparent;
+  width: 6rem;
+  height: 6rem;
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover path {
+      stroke: $clr-text-light;
+    }
+  }
+
+  &_burger {
+    @extend %button-transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 4.4rem;
+    height: 4.4rem;
+    border: 0.1rem solid $clr-border-dark;
+    border-radius: 10rem;
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover path {
+        stroke: $clr-text-light;
+      }
+    }
+
+    .burger {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 1rem;
+
+      &__top {
+        width: 18px;
+        height: 0;
+        border: 1px solid $clr-border-dark;
+      }
+
+      &__bottom {
+        width: 18px;
+        height: 0;
+        border: 1px solid $clr-border-dark;
+      }
+    }
+
+    &__cross {
+      .burger__top {
+        transform: rotate(45deg) translate(3px, 3px);
+      }
+
+      .burger__bottom {
+        transform: rotate(-45deg) translate(3px, -3px);
+      }
+    }
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &_burger:hover .burger__top,
+    &_burger:hover .burger__bottom {
+      border-color: $clr-text-light;
+    }
+  }
+}
+
+.button-icon-light {
+  @extend %button-transparent;
+  width: 6rem;
+  height: 6rem;
+  border-color: $clr-border-light;
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      background-color: $clr-bg-body;
+    }
+
+    &:hover path {
+      stroke: $clr-text-dark;
+    }
+  }
+}

@@ -1,0 +1,56 @@
+.sidebar {
+  display: none;
+  position: absolute;
+  font-size: 0;
+  font-weight: 600;
+  line-height: 1.25;
+  background-color: $clr-bg-body;
+  top: 9.9rem;
+  right: 0;
+  width: 0;
+  height: 100vh;
+  transition: $transition;
+  overflow: hidden;
+  z-index: 1;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10rem;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+
+  &__navigation {
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+  }
+
+  &__button {
+    display: flex;
+    gap: 1.6rem;
+
+    .sidebar__button__icon {
+      transition: $transition;
+      width: 0;
+    }
+  }
+
+  &__active {
+    font-size: 3.2rem;
+    width: 100%;
+
+    .sidebar__button {
+      .sidebar__button__icon {
+        width: 41px;
+      }
+    }
+  }
+
+  @media (max-width: $tablet-width) {
+    display: block;
+  }
+}

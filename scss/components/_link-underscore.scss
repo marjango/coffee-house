@@ -1,0 +1,53 @@
+%link-underscore-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+
+  &.non-interactive-link > a {
+    cursor: default;
+    pointer-events: none;
+  }
+
+  &::after {
+    content: "";
+    width: 0;
+    height: 0.2rem;
+    background-color: transparent;
+    transition: $transition;
+  }
+
+  &.non-interactive-link::after {
+    width: 100%;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover::after {
+      width: 100%;
+    }
+  }
+}
+
+.link-underscore-wrapper-light {
+  @extend %link-underscore-wrapper;
+
+  &.non-interactive-link::after {
+    background-color: $clr-text-light;
+  }
+
+  &:not(.non-interactive-link):hover::after {
+    background-color: $clr-text-light;
+  }
+}
+
+.link-underscore-wrapper-dark {
+  @extend %link-underscore-wrapper;
+
+  &.non-interactive-link::after {
+    background-color: $clr-text-dark;
+  }
+
+  &:not(.non-interactive-link):hover::after {
+    background-color: $clr-text-dark;
+  }
+}

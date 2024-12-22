@@ -1,0 +1,29 @@
+// Colors
+$clr-text-dark: #403f3d;
+$clr-text-light: #e1d4c9;
+$clr-text-accent: #b0907a;
+
+$clr-bg-body: #e1d4c9;
+$clr-bg-container: #665f55;
+$clr-bg-backdrop: #403f3dcc;
+
+$clr-border-light: #c1b6ad;
+$clr-border-dark: #665f55;
+
+// Breakpoints
+$desktop-width: 1440px;
+$custom-mid-width: 900px;
+$tablet-width: 768px;
+$custom-small-width: 600px;
+$custom-extra-width: 450px;
+$mobile-width: 380px;
+
+// Animations
+$transition: all 0.3s ease-in;
+$sliderInterval: width 6s linear;
+
+// Images
+$img-big-aspect-ratio-desktop: 66 / 59;
+$img-small-aspect-ratio-desktop: 66 / 43;
+$img-aspect-ratio-tablet: 688 / 590;
+$img-aspect-ratio-mobile: 348 / 590;

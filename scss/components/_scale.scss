@@ -1,0 +1,40 @@
+.scale {
+  &__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  &__target {
+    transition: $transition;
+    transform: scale(1.1);
+    width: 100%;
+
+    @media (max-width: $custom-mid-width) {
+      .about & {
+        transform: scale(1.055);
+      }
+    }
+
+    @media (max-width: $custom-small-width) {
+      // width: auto;
+      transform: none;
+      .about & {
+        transform: none;
+      }
+    }
+
+    @media (max-width: $custom-extra-width) {
+      width: auto;
+    }
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &__trigger:hover {
+      & .scale__target {
+        transform: scale(1);
+      }
+    }
+  }
+}

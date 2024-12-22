@@ -1,0 +1,8 @@
+.tiles {
+  width: 100%;
+  display: grid;
+  gap: 4rem;
+  grid-template-columns: repeat(auto-fill, 31rem);
+  grid-auto-rows: 50.6rem;
+  justify-content: center;
+}

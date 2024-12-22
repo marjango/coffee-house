@@ -1,0 +1,38 @@
+.promo {
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+    gap: 10rem;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (max-width: $custom-small-width) {
+      grid-template-columns: repeat(auto-fit, minmax(348px, 1fr));
+      gap: 4rem;
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__image {
+    max-width: 63rem;
+    width: 100%;
+  }
+}
